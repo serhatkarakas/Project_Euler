@@ -1,16 +1,21 @@
-function fibonnacci() {
-  let a = 0;
-  let b = 1;
+let cache = [1, 2];
+
+function fibonnacci(i) {
+  if (cache[i]) {
+    return cache[i];
+  }
+  cache[i] = fibonnacci(i - 1) + fibonnacci(i - 2);
+  return cache[i];
+}
+
+function ligma() {
   let sum = 0;
-  while (a <= 4000000) {
-    if (a % 2 === 0) {
-      sum += a;
+  for (let i = 0; i < 4000000; i++) {
+    sum = fibonnacci(i);
+    if (fibonnacci(i) > 4000000) {
+      break;
     }
-    let temp = a;
-    a = b;
-    b = temp + b;
     console.log(sum);
   }
-  
 }
-fibonnacci();
+ligma();
