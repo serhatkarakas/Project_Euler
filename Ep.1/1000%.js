@@ -12,8 +12,9 @@ Find the sum of all the multiples of
 .*/
 function mod() {
   for (let i = 0; i < 1000; i++) {
-    if (i % 3 === 0 || i % 5 === 0) {
+    if (i % 3 === 0 && i % 5 === 0) {
       console.log(i);
     }
   }
 }
+mod();
